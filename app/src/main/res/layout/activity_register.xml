@@ -96,15 +96,16 @@
 
                 <RadioButton
                     android:layout_weight="1"
-
+                    android:onClick="check"
+                    android:checked="true"
                     android:id="@+id/novel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
                     android:text="Novels" />
 
                 <RadioButton
                     android:layout_weight="1"
+                    android:onClick="check"
 
                     android:id="@+id/Literary"
                     android:layout_width="wrap_content"
@@ -113,6 +114,7 @@
 
                 <RadioButton
                     android:layout_weight="1"
+                    android:onClick="check"
 
                     android:id="@+id/science"
                     android:layout_width="wrap_content"
@@ -122,6 +124,7 @@
 
                 <RadioButton
                     android:layout_weight="1"
+                    android:onClick="check"
 
                     android:id="@+id/diaries"
                     android:layout_width="wrap_content"

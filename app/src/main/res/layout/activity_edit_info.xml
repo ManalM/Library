@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
 
 
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="200dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="10dp"
         app:cardBackgroundColor="#0fff"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp">
@@ -81,15 +81,16 @@
 
                 <RadioButton
                     android:layout_weight="1"
-
                     android:id="@+id/novel"
+                    android:onClick="check"
+                    android:checked="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
                     android:text="Novels" />
 
                 <RadioButton
                     android:layout_weight="1"
+                    android:onClick="check"
 
                     android:id="@+id/Literary"
                     android:layout_width="wrap_content"
@@ -98,6 +99,7 @@
 
                 <RadioButton
                     android:layout_weight="1"
+                    android:onClick="check"
 
                     android:id="@+id/science"
                     android:layout_width="wrap_content"
@@ -107,6 +109,7 @@
 
                 <RadioButton
                     android:layout_weight="1"
+                    android:onClick="check"
 
                     android:id="@+id/diaries"
                     android:layout_width="wrap_content"

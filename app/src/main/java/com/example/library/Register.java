@@ -19,6 +19,9 @@ public class Register extends AppCompatActivity {
     EditText email, name, pass, confirmPass, phone ;
     private RadioGroup section;
     private int selectedSection;
+    RadioButton radioButton;
+    String ChozenSection ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +40,7 @@ public class Register extends AppCompatActivity {
         phone =findViewById(R.id.phone);
 
         section = findViewById(R.id.radio);
-        selectedSection = section.getCheckedRadioButtonId();
-       // selectedGender = (RadioButton) findViewById(selectedSection);
+
         ///--------database--------------
 
         adapter = new DBAdapter(this);
@@ -50,23 +52,8 @@ public class Register extends AppCompatActivity {
         String phoneInput= phone.getText().toString();
         String passInput = pass.getText().toString();
         String confirmPassInput = confirmPass.getText().toString();
-        String ChozenSection = "";
 
-        switch (selectedSection){
-            case R.id.novel:
-                ChozenSection = "novel";
-                break;
 
-            case R.id.science:
-                ChozenSection = "science";
-                break;
-            case R.id.diaries:
-                ChozenSection = "diaries";
-                break;
-                case R.id.Literary:
-                ChozenSection = "Literary";
-                break;
-        }
         if (nameInput.isEmpty() && emailInput.isEmpty() && phoneInput.isEmpty() &&  passInput.isEmpty() && confirmPassInput.isEmpty()) {
             Toast.makeText(this, "Enter the values for all fields", Toast.LENGTH_SHORT).show();
         } else {
@@ -89,5 +76,13 @@ public class Register extends AppCompatActivity {
         Intent intent = new Intent(this, ViewInfo.class);
         intent.putExtra("Data", data);
         startActivity(intent);
+    }
+
+    public void check(View view) {
+
+        selectedSection = section.getCheckedRadioButtonId();
+        radioButton = (RadioButton) findViewById(selectedSection);
+
+        ChozenSection = radioButton.getText().toString();
     }
 }
